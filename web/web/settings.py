@@ -87,7 +87,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    # 'django.contrib.sessions',
+    'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
@@ -120,10 +120,10 @@ WSGI_APPLICATION = 'web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd78ltmmlst4aor',
-        'USER': 'wghgepkusbkdqy',
-        'PASSWORD': '8T_NFCx_-IvWL8x2GMPxvV7O3G',
-        'HOST': 'ec2-50-16-229-91.compute-1.amazonaws.com',
+        'NAME': 'd9bp1am0fa1fk3',
+        'USER': 'rlajgvusxpkqnx',
+        'PASSWORD': 'iM2mGyfPHAIA3f-B1NY9RXQ7pK',
+        'HOST': 'ec2-54-227-247-161.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
