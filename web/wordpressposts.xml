@@ -119,14 +119,6 @@ I think it was that climb that really sealed my passion for the challenge of roc
   <wp:post_type>post</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
-  <category domain="category" nicename="adaptive-sports"><![CDATA[adaptive sports]]></category>
-  <category domain="post_tag" nicename="adaptive-sports"><![CDATA[adaptive sports]]></category>
-  <category domain="category" nicename="adventure"><![CDATA[adventure]]></category>
-  <category domain="post_tag" nicename="maine-adaptive"><![CDATA[maine adaptive]]></category>
-  <category domain="post_tag" nicename="paradox-sports"><![CDATA[paradox sports]]></category>
-  <category domain="post_tag" nicename="rock-climbing"><![CDATA[rock climbing]]></category>
-  <category domain="category" nicename="sit-climbing"><![CDATA[sit climbing]]></category>
-  <category domain="post_tag" nicename="sit-climbing"><![CDATA[sit climbing]]></category>
   <wp:postmeta>
     <wp:meta_key>_edit_last</wp:meta_key>
     <wp:meta_value><![CDATA[93825277]]></wp:meta_value>
@@ -588,13 +580,6 @@ AAC Live Your Dream Grant: <a href="https://www.americanalpineclub.org/">https:
   <wp:post_type>post</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
-  <category domain="category" nicename="adaptive-sports"><![CDATA[adaptive sports]]></category>
-  <category domain="post_tag" nicename="adaptive-sports"><![CDATA[adaptive sports]]></category>
-  <category domain="category" nicename="adventure"><![CDATA[adventure]]></category>
-  <category domain="post_tag" nicename="paradox-sports"><![CDATA[paradox sports]]></category>
-  <category domain="post_tag" nicename="rock-climbing"><![CDATA[rock climbing]]></category>
-  <category domain="category" nicename="sit-climbing"><![CDATA[sit climbing]]></category>
-  <category domain="post_tag" nicename="sit-climbing"><![CDATA[sit climbing]]></category>
   <wp:postmeta>
     <wp:meta_key>_publicize_done_external</wp:meta_key>
     <wp:meta_value><![CDATA[a:1:{s:8:"facebook";a:1:{i:12291207;s:38:"https://facebook.com/10156004040440224";}}]]></wp:meta_value>
@@ -1988,11 +1973,6 @@ Shawagunk Mountains: http://www.nationalgeographic.com/adventure/0509/sports/ro
   <wp:post_type>post</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
-  <category domain="category" nicename="adaptive-sports"><![CDATA[adaptive sports]]></category>
-  <category domain="category" nicename="adventure"><![CDATA[adventure]]></category>
-  <category domain="category" nicename="beyondlimits"><![CDATA[beyondlimits]]></category>
-  <category domain="category" nicename="paradox-sports"><![CDATA[paradox sports]]></category>
-  <category domain="category" nicename="sit-climbing"><![CDATA[sit climbing]]></category>
   <wp:postmeta>
     <wp:meta_key>_edit_last</wp:meta_key>
     <wp:meta_value><![CDATA[93825277]]></wp:meta_value>
@@ -2453,11 +2433,6 @@ I also was able to present my story of growing up with spina bifida and all the 
   <wp:post_type>post</wp:post_type>
   <wp:post_password/>
   <wp:is_sticky>0</wp:is_sticky>
-  <category domain="category" nicename="adaptive-sports"><![CDATA[adaptive sports]]></category>
-  <category domain="category" nicename="adventure"><![CDATA[adventure]]></category>
-  <category domain="category" nicename="ice-climbing"><![CDATA[ice climbing]]></category>
-  <category domain="category" nicename="paradox-sports"><![CDATA[paradox sports]]></category>
-  <category domain="category" nicename="sit-climbing"><![CDATA[sit climbing]]></category>
   <wp:postmeta>
     <wp:meta_key>_edit_last</wp:meta_key>
     <wp:meta_value><![CDATA[93825277]]></wp:meta_value>
