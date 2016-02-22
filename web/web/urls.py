@@ -31,7 +31,7 @@ blog_urls = [
     url(r'^blog/', include('zinnia.urls.archives')),
     url(r'^blog/', include('zinnia.urls.shortlink')),
     url(r'^blog/', include('zinnia.urls.quick_entry'))
-	url(r'^blog/', 'zinnia.views.about', name='about'),
+	url(r'^about/', 'enocktest.views.about', name='about'),
 ]
 
 urlpatterns = patterns('',
