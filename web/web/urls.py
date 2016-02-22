@@ -13,9 +13,11 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
+from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
+from django.conf import settings
+from django.conf.urls.static import static
 
 blog_urls = [
     url(r'^', include('zinnia.urls.capabilities')),
@@ -31,7 +33,7 @@ blog_urls = [
     url(r'^blog/', include('zinnia.urls.archives')),
     url(r'^blog/', include('zinnia.urls.shortlink')),
     url(r'^blog/', include('zinnia.urls.quick_entry'))
-	url(r'^blog/about/', 'enocktest.views.about', name='about'),
+	url(r'^comments/', include('django_comments.urls')),
 ]
 
 urlpatterns = patterns('',
@@ -40,7 +42,7 @@ urlpatterns = patterns('',
     
 
     
-    url(r'^comments/', include('django_comments.urls')),
+    
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(blog_urls, namespace='zinnia')),
 )
