@@ -35,13 +35,5 @@ blog_urls = [
     url(r'^blog/', include('zinnia.urls.shortlink')),
     url(r'^blog/', include('zinnia.urls.quick_entry'))
 ]
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'web.views.home', name='home'),
-    
 
-    
-    
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include(blog_urls, namespace='zinnia')),
-)
+url(r'^', include(blog_urls, namespace='zinnia'))
