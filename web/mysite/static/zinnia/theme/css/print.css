@@ -12,7 +12,7 @@
   display: none; }
 
 #header h1 {
-  margin-bottom: 0; }
+ /*  margin-bottom: 0; */ }
   #header h1 a {
     font-size: 2em;
     font-weight: bold; }
