@@ -13,35 +13,65 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import patterns, include, url
-from django.contrib import admin
-
 from django.conf import settings
+from django.contrib import admin
+from django.conf.urls import url
+from django.conf.urls import include
+
+from django.views.static import serve
+from django.views.defaults import bad_request
+from django.views.defaults import server_error
+from django.views.defaults import page_not_found
+from django.views.defaults import permission_denied
+from django.views.generic.base import RedirectView
+from django.contrib.sitemaps.views import index
+from django.contrib.sitemaps.views import sitemap
+
+from django_xmlrpc.views import handle_xmlrpc
+
+from zinnia.sitemaps import TagSitemap
+from zinnia.sitemaps import EntrySitemap
+from zinnia.sitemaps import CategorySitemap
+from zinnia.sitemaps import AuthorSitemap
 from django.conf.urls.static import static
 
-blog_urls = [
-     url(r'^', include('zinnia.urls.capabilities')),
-    url(r'^search/', include('zinnia.urls.search')),
-    url(r'^sitemap/', include('zinnia.urls.sitemap')),
-    url(r'^trackback/', include('zinnia.urls.trackback')),
-    url(r'^blog/tags/', include('zinnia.urls.tags')),
-    url(r'^blog/feeds/', include('zinnia.urls.feeds')),
-    url(r'^blog/random/', include('zinnia.urls.random')),
-    url(r'^blog/authors/', include('zinnia.urls.authors')),
-    url(r'^blog/categories/', include('zinnia.urls.categories')),
-    url(r'^blog/comments/', include('zinnia.urls.comments')),
-    url(r'^blog/', include('zinnia.urls.entries')),
-    url(r'^blog/', include('zinnia.urls.archives')),
-    url(r'^blog/', include('zinnia.urls.shortlink')),
-    url(r'^blog/', include('zinnia.urls.quick_entry'))
-]
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'web.views.home', name='home'),
-    
-
-    
-    
+urlpatterns = [
+    url(r'^$', RedirectView.as_view(url='/blog/', permanent=True)),
+    url(r'^blog/', include('zinnia.urls', namespace='zinnia')),
+	url(r'^blog/', include('zinnia.urls.entries')),
+    url(r'^comments/', include('django_comments.urls')),
+    url(r'^xmlrpc/$', handle_xmlrpc),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include(blog_urls, namespace='zinnia')),
-)
+	url(r'^$', include('zinnia.urls.entries')),
+	
+]
+
+sitemaps = {
+    'tags': TagSitemap,
+    'blog': EntrySitemap,
+    'authors': AuthorSitemap,
+    'categories': CategorySitemap
+}
+
+urlpatterns += [
+    url(r'^sitemap.xml$',
+        index,
+        {'sitemaps': sitemaps}),
+    url(r'^sitemap-(?P<section>.+)\.xml$',
+        sitemap,
+        {'sitemaps': sitemaps}),
+]
+
+urlpatterns += [
+    url(r'^400/$', bad_request),
+    url(r'^403/$', permission_denied),
+    url(r'^404/$', page_not_found),
+    url(r'^500/$', server_error),
+]
+
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', serve,
+            {'document_root': settings.MEDIA_ROOT})
+    ]
