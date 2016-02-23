@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 blog_urls = [
-    url(r'^', include('zinnia.urls.capabilities')),
+     url(r'^', include('zinnia.urls.capabilities')),
     url(r'^search/', include('zinnia.urls.search')),
     url(r'^sitemap/', include('zinnia.urls.sitemap')),
     url(r'^trackback/', include('zinnia.urls.trackback')),
@@ -35,5 +35,13 @@ blog_urls = [
     url(r'^blog/', include('zinnia.urls.shortlink')),
     url(r'^blog/', include('zinnia.urls.quick_entry'))
 ]
+urlpatterns = patterns('',
+    # Examples:
+    # url(r'^$', 'web.views.home', name='home'),
+    
 
-url(r'^', include(blog_urls, namespace='zinnia'))
+    
+    
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include(blog_urls, namespace='zinnia')),
+)
