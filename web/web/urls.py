@@ -70,8 +70,3 @@ urlpatterns += [
     url(r'^500/$', server_error),
 ]
 
-if settings.DEBUG:
-    urlpatterns += [
-        url(r'^media/(?P<path>.*)$', serve,
-            {'document_root': settings.MEDIA_ROOT})
-    ]
