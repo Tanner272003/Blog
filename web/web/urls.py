@@ -17,7 +17,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.conf.urls import url
 from django.conf.urls import include
-
+from mysite import views
 from django.views.static import serve
 from django.views.defaults import bad_request
 from django.views.defaults import server_error
