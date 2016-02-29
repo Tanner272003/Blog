@@ -29,7 +29,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-ZINNIA_TEMPLATE_DIR = os.path.join(BASE_DIR, 'web/mysite/templates')
+ZINNIA_TEMPLATE_DIR = os.path.join(BASE_DIR, 'site36-master/web/mysite/templates')
 print "ZINNIA_TEMPLATE_DIR", ZINNIA_TEMPLATE_DIR
 
 TEMPLATES = [
