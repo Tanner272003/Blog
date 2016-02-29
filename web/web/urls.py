@@ -45,6 +45,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^$', include('zinnia.urls.entries')),
 	url(r'^about/$', views.about),
+	url(r'^about/blog', views.about),
 ]
 
 sitemaps = {
