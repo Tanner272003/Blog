@@ -36,7 +36,7 @@ from zinnia.sitemaps import AuthorSitemap
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^$', RedirectView.as_view(url='/about/', permanent=True)),
+    url(r'^$', RedirectView.as_view(url='/blog/', permanent=True)),
     url(r'^blog/', include('zinnia.urls', namespace='zinnia')),
 	url(r'^blog/', include('zinnia.urls.entries')),
     url(r'^comments/', include('django_comments.urls')),
@@ -44,7 +44,7 @@ urlpatterns = [
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^$', include('zinnia.urls.entries')),
-	url(r'^about.html/$', views.about),
+	url(r'^blog/about/$', views.about),
 ]
 
 sitemaps = {
