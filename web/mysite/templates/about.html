@@ -1,15 +1,31 @@
-
-{% load staticfiles %}
-{% block title %}About Go Beyond The Fence{% endblock %}
-{% block navtitle %}Go Beyond The Fence{% endblock %}
+{% load i18n staticfiles %}
 
 
-<link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/theme/css/myscreen.css" %}" />
-<link rel="stylesheet" type="text/css" media="print" href="{% static "zinnia/theme/css/print.css" %}" />
-<style type="text/css">
-</style>
-
-<header class = "centerheader" id="header" role="banner">
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %} - Zinnia's Weblog</title>
+    <meta name="robots" content="follow, all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{% block meta-description %}{% trans "Just another Zinnia weblog." %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
+    <meta name="keywords" content="{% block meta-keywords %}django, blog, weblog, zinnia{% endblock meta-keywords %}" />
+    <meta name="author" content="Fantomas42" />
+    {% block meta %}{% endblock meta %}
+   <!--  <link rel="pingback" href="/xmlrpc/" /> -->
+    
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/theme/css/myscreen.css" %}" />
+    <link rel="stylesheet" type="text/css" media="print" href="{% static "zinnia/theme/css/print.css" %}" />
+    <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/theme/css/ie.css" %}" />
+    <![endif]-->
+    {% block link %}{% endblock link %}
+    {% block script %}{% endblock script %}
+  </head>
+  <body class="zinnia body {% block color-class %}blue{% endblock color-class %} ">
+     
+	<div class="container body2">
+      <header class = "centerheader" id="header" role="banner">
 	  
         <h1>
           <p class="pclass" style= "text-shadow: 2px 2px white;">
@@ -26,22 +42,80 @@
 			<link rel="shortcut icon" href="{% static "zinnia/theme/img/favicon.ico" %}" />
 			<link rel="home" href="{% url "zinnia:entry_archive_index" %}" />
 			</li>
+            <li>
+			
+              <a href="{% url 'zinnia:sitemap' %}"  title="{% trans "Monthly Archives" %}" class="navbar" rel="Monthly Archives">
+                {% trans "Monthly Archives" %}
+              </a>
+			  
+            </li>
+			<li>
+			
+              <a href="{% url 'zinnia:category_list' %}" title= "{% trans "Categories" %}" class="navbar"> 
+			  {% trans "categories" %}
+              </a>
+			  
+			</li>
+			<li>
+			
+              <a href="{% url 'zinnia:author_list' %}"title= "{% trans "Authors" %}" class="navbar"> 
+			  {% trans "authors" %}
+              </a>
+			 
+			</li>
+			<li>
+			
+              <a href="{% url 'zinnia:tag_list' %}"title= "{% trans "Tags" %}" class="navbar"> 
+			  {% trans "tags" %}
+              </a>
+			  
+			</li>
+			<li>
+			<form  method="get" action="{% url 'zinnia:entry_search' %}">
+          <p>
+            <input type="text" name="pattern" placeholder="{% trans "Keywords..." %}" {% if pattern %}value="{{ pattern }}"{% endif %} />
+            <input type="submit" class="submitbutton" value="OK" />
+          </p>
+        </form>
+		</li>
+          </ul>
+        </nav>
+       
+       
+        {% block breadcrumbs %}{% endblock breadcrumbs %}
+      </header>
+      {% block slider %}{% endblock slider %}
+      <div id="content" class="hfeed" role="main">
+        {% block content %}
+        <div class="links">
+          <h2>{% trans "Useful links" %}</h2>
+          <ul>
+            <li>
+              <a href="{% url 'zinnia:entry_archive_index' %}" title="{% trans "Weblog index" %}">
+                {% trans "Weblog index" %}
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}">
+                {% trans "Sitemap" %}
+              </a>
+            </li>
 
-{% block content %}
-
-
-
-<h2>Mission</h2>
-
-To help connect people by making it easier to provide, find, organize and share views of the world.
-
-&nbsp;<p>
-&nbsp;<p>
-This involves providing access to technologies that allow us to see other parts of the world,
-and to share our own, in many exciting ways, such as live or recorded images, video, and virtual
-models.   More importantly, it involves using those technologies to help us connect, and to share
-our stories, concerns and dreams and aspirations.
-
-
-
-{% endblock %}
+          </ul>
+        </div>
+        <div class="search">
+          <h2>{% trans "Search" %}</h2>
+          {% include "zinnia/tags/search_form.html" %}
+        </div>
+        {% endblock content %}
+      </div>
+      <div id="sidebar" role="complementary">
+        {% block sidebar %}
+        {% endblock sidebar %}
+      </div>
+      <footer id="footer" role="contentinfo">
+        <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
+      </footer>
+    </div>
+  </body>
+</html>
