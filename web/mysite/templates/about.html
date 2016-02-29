@@ -1,6 +1,6 @@
 
 {% load i18n staticfiles %}
-
+{% load zinnia i18n %}
 
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}">
@@ -40,7 +40,8 @@
         <nav>
           <ul class="top-navigation">
 		  <li>
-			<a href="blog">My Other Page</a>
+			<link rel="shortcut icon" href="{% static "zinnia/theme/img/favicon.ico" %}" />
+			<link rel="home" href="{% url "zinnia:entry_archive_index" %}" />
 			  
             </li>
 			
