@@ -44,32 +44,14 @@
 			</li>
             <li>
 			
-              <a href="{% url 'zinnia:sitemap' %}"  title="{% trans "Monthly Archives" %}" class="navbar" rel="Monthly Archives">
-                {% trans "Monthly Archives" %}
+              <link rel="home" href="{% url "zinnia:entry_archive_index" %}" />
+                {% trans "Enter Blog" %}
               </a>
 			  
             </li>
-			<li>
 			
-              <a href="{% url 'zinnia:category_list' %}" title= "{% trans "Categories" %}" class="navbar"> 
-			  {% trans "categories" %}
-              </a>
-			  
-			</li>
-			<li>
 			
-              <a href="{% url 'zinnia:author_list' %}"title= "{% trans "Authors" %}" class="navbar"> 
-			  {% trans "authors" %}
-              </a>
-			 
-			</li>
-			<li>
-			
-              <a href="{% url 'zinnia:tag_list' %}"title= "{% trans "Tags" %}" class="navbar"> 
-			  {% trans "tags" %}
-              </a>
-			  
-			</li>
+		
 			<li>
 			<form  method="get" action="{% url 'zinnia:entry_search' %}">
           <p>
