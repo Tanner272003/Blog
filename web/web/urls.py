@@ -34,7 +34,7 @@ from zinnia.sitemaps import EntrySitemap
 from zinnia.sitemaps import CategorySitemap
 from zinnia.sitemaps import AuthorSitemap
 from django.conf.urls.static import static
-
+app_name = 'enocktest'
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url='/about/', permanent=True)),
     url(r'^blog/', include('zinnia.urls', namespace='zinnia')),
