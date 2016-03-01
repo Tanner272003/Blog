@@ -35,6 +35,7 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
     border: 3px solid #73AD21;
     padding: 10px;
 }
+
 article,details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; 
   
@@ -315,11 +316,11 @@ padding:10px;	}
       font-size: 3.5em; } }
   @media  {
     .zinnia #header h1 {
-      xbackground: transparent url("../img/elcapcopy.png") no-repeat;
-      background: transparent url("../img/elcapcopy.png") no-repeat ;
+      xbackground: transparent url("../img/summit.jpg") no-repeat;
+      background: transparent url("../img/summit.jpg") no-repeat ;
      
-	  width: 815px;
-	  height: 315px;}
+	  width: 360px;
+	  height: 480px;}
     .zinnia #header blockquote {
       margin-left: 6em; } }
 
