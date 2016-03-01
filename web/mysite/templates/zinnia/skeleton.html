@@ -42,6 +42,13 @@
 			<link rel="shortcut icon" href="{% static "zinnia/theme/img/favicon.ico" %}" />
 			<link rel="home" href="{% url "zinnia:entry_archive_index" %}" />
 			</li>
+			<li>
+			
+              <a href="{% url 'about'  %}" title="{% trans "About Go Beyond The Fence" %}" class="navbar" rel="About Go Beyond The Fence">
+                {% trans "About Go Beyond The Fence" %}
+              </a>
+			  
+			</li>
             <li>
 			
               <a href="{% url 'zinnia:sitemap' %}"  title="{% trans "Monthly Archives" %}" class="navbar" rel="Monthly Archives">
@@ -63,12 +70,7 @@
               </a>
 			 
 			</li>
-			<li>
 			
-              <a href="{% url 'about'  %}">Click here</a>
-              </a>
-			  
-			</li>
 			<li>
 			<form  method="get" action="{% url 'zinnia:entry_search' %}">
           <p>
