@@ -1,4 +1,4 @@
-
+{% load url from future %}
 {% load i18n staticfiles %}
 {% load zinnia i18n %}
 
@@ -20,6 +20,7 @@
     <!--[if lt IE 8]>
         <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/theme/css/ie.css" %}" />
     <![endif]-->
+	
     {% block link %}{% endblock link %}
     {% block script %}{% endblock script %}
   </head>
@@ -44,7 +45,7 @@
 			<link rel="home" href="{% url "zinnia:entry_archive_index" %}" />
 			  
             </li>
-			<a href="{% url 'blog:about' %}">Click here</a>
+			<a href="{% url 'about'  %}">Click here</a>
 	
         
 		</li>
